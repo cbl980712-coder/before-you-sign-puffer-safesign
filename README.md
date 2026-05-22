@@ -4,6 +4,10 @@
 
 This is a testnet prototype. It uses Puffer data when available, uses Token Core / `tcx-wasm` for local demo signing, and blocks automatic broadcast so final on-chain submission stays under user control.
 
+## Live Demo
+
+https://cbl980712-coder.github.io/before-you-sign-puffer-safesign/
+
 ## Demo Flow
 
 1. imToken 风格钱包首页
