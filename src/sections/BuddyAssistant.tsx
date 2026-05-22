@@ -236,6 +236,7 @@ interface Props {
 }
 
 export default function BuddyAssistant({ state = 'idle', bubble }: Props) {
+  const assetBase = import.meta.env.BASE_URL || '/';
   const [isTalking, setIsTalking] = useState(false);
   const [bubbleVisible, setBubbleVisible] = useState(true);
   const [visible, setVisible] = useState(true);
@@ -261,7 +262,7 @@ export default function BuddyAssistant({ state = 'idle', bubble }: Props) {
   if (!visible) {
     return (
       <button onClick={() => setVisible(true)} className="absolute bottom-3 right-3 z-40 w-10 h-10 rounded-full bg-it-blue/20 backdrop-blur flex items-center justify-center animate-pulse">
-        <img src="/buddy-idle.png" alt="" className="w-7 h-7 object-contain" />
+        <img src={`${assetBase}buddy-idle.png`} alt="" className="w-7 h-7 object-contain" />
       </button>
     );
   }
@@ -274,7 +275,7 @@ export default function BuddyAssistant({ state = 'idle', bubble }: Props) {
         <div className="absolute -inset-2 rounded-full bg-it-blue/20 blur-lg animate-pulse pointer-events-none" />
         {/* Image */}
         <img
-          src={isTalking ? '/buddy-talk.png' : '/buddy-idle.png'}
+          src={isTalking ? `${assetBase}buddy-talk.png` : `${assetBase}buddy-idle.png`}
           alt="BlueWhale Guard"
           className={`w-12 h-12 object-contain relative z-10 drop-shadow-xl transition-all duration-200 ${
             isTalking ? 'animate-buddy-bounce' : 'animate-buddy-float'
